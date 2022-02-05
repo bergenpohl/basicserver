@@ -1,7 +1,7 @@
 # Debian v11
 FROM debian:bullseye
 
-MAINTAINER bpohl
+# MAINTAINER name
 
 COPY srcs /root/srcs/
 
