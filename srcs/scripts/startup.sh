@@ -37,8 +37,8 @@ unzip phpMyAdmin-5.1.2-all-languages.zip
 mkdir /var/www/localhost/index/
 cp -r /root/srcs/index/* /var/www/localhost/index/
 
-mkdir /var/wwwlocalhost/app/
-cp -r /root/srcs/index/nodejs/* /var/www/localhost/app/
+mkdir /var/www/localhost/app/
+cp -r /root/srcs/nodejs/* /var/www/localhost/app/
 
 cp -r /root/srcs/wordpress /var/www/localhost/
 mkdir /var/www/localhost/phpmyadmin
