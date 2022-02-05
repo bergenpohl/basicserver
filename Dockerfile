@@ -23,7 +23,7 @@ RUN apt-get -y install	\
 	mariadb-server		\
 	mariadb-client		\
 	php php-fpm php-mbstring php-xml php-zip	\
-	php-mysql php-curl php-imagick php-gd
+	php-mysql php-curl php-imagick php-gd php-intl
 	
 RUN apt-get -y upgrade
 RUN apt-get -y remove apache2
