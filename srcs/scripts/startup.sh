@@ -26,8 +26,6 @@ openssl req -newkey rsa:4096 \
               -out /etc/ssl/certs/localhost.crt \
               -keyout /etc/ssl/private/localhost.key
 
-## VFSTPD
-
 ## NGINX
 mkdir /var/www/localhost
 
@@ -36,7 +34,11 @@ unzip latest.zip
 wget https://files.phpmyadmin.net/phpMyAdmin/5.1.2/phpMyAdmin-5.1.2-all-languages.zip
 unzip phpMyAdmin-5.1.2-all-languages.zip
 
-cp -r /root/srcs/index/* /var/www/localhost/
+mkdir /var/www/localhost/index/
+cp -r /root/srcs/index/* /var/www/localhost/index/
+
+mkdir /var/wwwlocalhost/app/
+cp -r /root/srcs/index/nodejs/* /var/www/localhost/app/
 
 cp -r /root/srcs/wordpress /var/www/localhost/
 mkdir /var/www/localhost/phpmyadmin
@@ -55,7 +57,6 @@ find /var/www/* -type f -exec chmod 644 {} \;
 /etc/init.d/nginx restart
 /etc/init.d/nginx status
 
-
 ## MYSQL (DATABASE)
 /etc/init.d/mariadb restart
 
@@ -72,19 +73,16 @@ echo "SOURCE /var/www/localhost/phpmyadmin/sql/create_tables.sql;" | mysql -u ro
 echo "GRANT ALL PRIVILEGES ON phpmyadmin.* TO 'wp_user'@'localhost';" | mysql -u root
 echo "FLUSH PRIVILEGES;" | mysql -u root
 
-
 ## PHP
 /etc/init.d/php7.4-fpm start
 /etc/init.d/php7.4-fpm status
 
-
 ## VSFTPD (FILE TRANSFER PROTOCALL)
-# cp /root/srcs/vsftpd/vsftpd.conf /etc/vsftpd.conf
+cp /root/srcs/vsftpd/vsftpd.conf /etc/vsftpd.conf
 cp /root/srcs/vsftpd/vsftpd.user_list /etc/vsftp.user_list
-	
+
 /etc/init.d/vsftpd start
 /etc/init.d/vsftpd status
-
 
 ## SHELL
 /bin/bash
