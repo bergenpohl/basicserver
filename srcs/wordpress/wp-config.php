@@ -100,8 +100,8 @@ define( 'FTP_HOST', 'localhost' );
 define( 'FTP_USER', 'wp_user' );
 /** define( 'FTP_PASS', '' ); */
 define( 'FTP_BASE', '/var/www/localhost/wordpress/' );
-define( 'FTP_CONTENT_DIR', '/var/www/localhost/wp-content' );
-define( 'FTP_PLUGIN_DIR', '/var/www/localhost/wp-content/plugins' );
+define( 'FTP_CONTENT_DIR', '/var/www/localhost/wordpress/wp-content' );
+define( 'FTP_PLUGIN_DIR', '/var/www/localhost/wordpress/wp-content/plugins' );
 define( 'FTP_SSL', true );
 define( 'FTP_PUBKEY', '/etc/ssl/certs/localhost.crt' );
 define( 'FTP_PRIKEY', '/etc/ssl/private/localhost.key' );
